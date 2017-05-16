@@ -1,0 +1,11 @@
+%h1
+  Nuevo Post
+%form{:action => "/posts/nuevo", :method => "post"}
+  %p
+    Titulo
+    %input{:name => "titulo", :type => "text"}
+  %p
+    Cuerpo
+    %textarea{:name => "cuerpo", :type => "text"}
+  %p
+    %input{:type => "submit"}

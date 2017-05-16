@@ -1,0 +1,13 @@
+%p
+  - if @posts.empty?
+    %p
+      No hay posts, crea una nuevo
+      %a(href="/posts/nuevo")
+        Link
+  - else
+    - @posts.each do |post|
+      %p
+        %a(href="/posts/ver/#{post.id}")
+          %li
+            = post.titulo
+        = post.fecha

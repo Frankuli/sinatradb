@@ -1,0 +1,19 @@
+%p
+  - if @visitas.empty?
+    %p
+      No hay visitas
+  - else
+    - @visitas.each do |visita|
+      %p
+        = visita.nombre
+        = visita.fecha
+      %p
+        = visita.mensaje
+  %h1
+    Firmar Libro de Visitas
+  %form{:action => "/visitas/nuevo", :method => "post"}
+    %label Nombre
+    %input{:name => "nombre", :type => "text"}
+    %label Mensaje
+    %textarea{:name => "mensaje", :type => "text"}
+    %input{:type => "submit"}

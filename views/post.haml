@@ -1,0 +1,21 @@
+%p
+  %h2
+    = @post.titulo
+  %h3
+    = @post.cuerpo
+  %p Comentarios
+  - @post.comentarios.each do |comment|
+    %p
+      De:
+      = comment.nombre
+    %p
+      Comentario:
+      = comment.cuerpo
+    %p
+      = '###################'
+  %form{:action => "/posts/comentarios/#{@post.id}/nuevo", :method => "post"}
+    %label Nombre
+    %input{:name => "nombre", :type => "text"}
+    %label Comentario
+    %textarea{:name => "cuerpo", :type => "text"}
+    %input{:type => "submit"}

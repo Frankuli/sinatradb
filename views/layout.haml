@@ -1,0 +1,35 @@
+!!!
+%html
+  %head
+    %title Mi aplicacion Sinatra
+    %link(rel="stylesheet" href="/css/styles.css")
+  %body
+    #wrapper
+      #header
+        %h1 Mi aplicacion Sinatra
+        %h2 Una simple aplicacion de ejemplo usando Sinatra y Haml
+      #nav
+        %ol
+          %a(href="/")
+            %li Home
+          %a(href="/acerca")
+            %li Acerca de
+          %a(href="/posts/index")
+            %li Posts
+          %a(href="/posts/nuevo")
+            %li Post Nuevo
+          %a(href="/visitas/index")
+            %li Libro de Visitas
+
+
+      #content
+        =yield
+
+      #side_bar
+        %h1 Barra lateral
+        %p
+          Esta es la barra lateral.
+
+      #footer
+        %p
+          Este el footer o pie de pagina.
